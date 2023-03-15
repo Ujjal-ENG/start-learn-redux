@@ -18,10 +18,10 @@ const Counter = () => {
     return (
         <div>
             <h3 className="text-4xl font-bold">Count: {count}</h3>
-            <button className="px-4 py-2 font-bold bg-blue-600 text-white m-5" type="button" onClick={handleIncrement}>
+            <button className="px-4 py-2 font-bold bg-blue-600 text-white m-5" type="button" onClick={handleIncrement} disabled={count === 10 ? true : false}>
                 Increment
             </button>
-            <button className="px-4 py-2 font-bold bg-blue-600 text-white m-5" type="button" onClick={handleDecrement}>
+            <button className="px-4 py-2 font-bold bg-blue-600 text-white m-5" type="button" onClick={handleDecrement} disabled={count === 0 ? true : false}>
                 Decrement
             </button>
             <button className="px-4 py-2 font-bold bg-blue-600 text-white m-5" type="button" onClick={handleReset}>
