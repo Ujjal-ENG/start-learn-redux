@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import { addBook } from './booksSlice';
 
 const AddBook = () => {
@@ -14,6 +15,8 @@ const AddBook = () => {
 
     const dispatch = useDispatch();
 
+    const navigate = useNavigate();
+
     const handleChange = (e) => {
         SetBook((pS) => ({
             ...pS,
@@ -25,6 +28,7 @@ const AddBook = () => {
         e.preventDefault();
         const newBook = { id: numberOfBooks + 1, title: bookName, author: bookAuthor };
         dispatch(addBook(newBook));
+        navigate('/book-details');
     };
 
     return (
