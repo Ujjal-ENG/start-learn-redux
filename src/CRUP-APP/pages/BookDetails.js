@@ -1,9 +1,15 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { FiEdit2, FiTrash2 } from 'react-icons/fi';
+import { deleteBook } from './booksSlice';
 
 const BookDetails = () => {
     const books = useSelector((state) => state.bookReducer.books);
+
+    const dispatch = useDispatch();
+    const handleDelete = (id) => {
+        dispatch(deleteBook(id));
+    };
 
     return (
         <div>
@@ -42,7 +48,7 @@ const BookDetails = () => {
                                     <FiEdit2 className="cursor-pointer" />
                                 </td>
                                 <td className="px-6 py-4 whitespace-nowrap text-center text-2xl text-red-600 ">
-                                    <FiTrash2 className="cursor-pointer" />
+                                    <FiTrash2 className="cursor-pointer" onClick={() => handleDelete(book.id)} />
                                 </td>
                             </tr>
                         ))}
