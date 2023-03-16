@@ -13,7 +13,7 @@ const BookDetails = () => {
         bookAuthor: ''
     });
 
-    const { id, bookName, bookAuthor } = book;
+    const { bookName, bookAuthor } = book;
 
     const handleChange = (e) => {
         setBook({
