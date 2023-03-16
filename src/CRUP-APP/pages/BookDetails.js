@@ -31,20 +31,21 @@ const BookDetails = () => {
                     </tr>
                 </thead>
                 <tbody className="bg-white divide-y divide-gray-200">
-                    {books.map((book) => (
-                        <tr key={book.id}>
-                            <td className="px-6 py-4 whitespace-nowrap text-center">{book.id}</td>
-                            <td className="px-6 py-4 whitespace-nowrap text-center">{book.title}</td>
-                            <td className="px-6 py-4 whitespace-wrap text-center">{book.author}</td>
+                    {books &&
+                        books.map((book) => (
+                            <tr key={book.id}>
+                                <td className="px-6 py-4 whitespace-nowrap text-center">{book.id}</td>
+                                <td className="px-6 py-4 whitespace-nowrap text-center">{book.title}</td>
+                                <td className="px-6 py-4 whitespace-wrap text-center">{book.author}</td>
 
-                            <td className="px-6 py-4 whitespace-nowrap text-center text-violet-600 text-2xl">
-                                <FiEdit2 className="cursor-pointer" />
-                            </td>
-                            <td className="px-6 py-4 whitespace-nowrap text-center text-2xl text-red-600 ">
-                                <FiTrash2 className="cursor-pointer" />
-                            </td>
-                        </tr>
-                    ))}
+                                <td className="px-6 py-4 whitespace-nowrap text-center text-violet-600 text-2xl">
+                                    <FiEdit2 className="cursor-pointer" />
+                                </td>
+                                <td className="px-6 py-4 whitespace-nowrap text-center text-2xl text-red-600 ">
+                                    <FiTrash2 className="cursor-pointer" />
+                                </td>
+                            </tr>
+                        ))}
                 </tbody>
             </table>
         </div>
