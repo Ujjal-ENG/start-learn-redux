@@ -1,10 +1,10 @@
 import React from 'react';
-import PostView from './fetaures/posts/PostView';
+import Index from './CRUP-APP/routes/Index.js';
 
 const App = () => {
     return (
         <>
-            <PostView />
+            <Index />
         </>
     );
 };
