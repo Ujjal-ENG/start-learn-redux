@@ -1,10 +1,10 @@
 import React from 'react';
-import CounterView from './fetaures/counter/CounterView';
+import PostView from './fetaures/posts/PostView';
 
 const App = () => {
     return (
         <>
-            <CounterView />
+            <PostView />
         </>
     );
 };
